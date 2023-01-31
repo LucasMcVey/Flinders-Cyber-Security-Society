@@ -10,6 +10,30 @@ Configure the Wireless Access point
 
 ![](img/WifiHackingWorkshop1.png)
 
+[https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
+
+sudo apt\-get update
+
+sudo apt\-get install linux\-headers\-$\(uname \-r\)
+
+Git clone [https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
+
+Cd rtl8812au
+
+make
+
+sudo insmod 8812au\.ko
+
+sudo cp 8812au\.ko /lib/modules/$\(uname  r\)/kernel/drivers/net/wireless
+
+sudo depmod
+
+sudo apt\-get install build\-essential dkms
+
+sudo make dkms\_install
+
+echo 8192eu | sudo tee \-a /etc/modules
+
 Add the Wireless adapter to VirtualBox
 
 ![](img/WifiHackingWorkshop2.png)
@@ -24,7 +48,7 @@ Discovering BSSID
 
 ![](img/WifiHackingWorkshop4.png)
 
-<span style="color:#000000">Sudo airodump\-ng \-c 11 wlan0</span>
+<span style="color:#000000">s</span>  <span style="color:#000000">udo airodump\-ng \-c 11 wlan0</span>
 
 Discovering devices
 
