@@ -22,9 +22,9 @@ sudo apt\-get update
 
 sudo apt\-get install linux\-headers\-$\(uname \-r\)
 
-Git clone [https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
+git clone [https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
 
-Cd rtl8812au
+cd rtl8812au
 
 make
 
