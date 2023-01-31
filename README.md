@@ -38,6 +38,8 @@ sudo make dkms\_install
 
 echo 8192eu | sudo tee \-a /etc/modules
 
+### Adapter Setup
+
 Add the Wireless adapter to VirtualBox
 
 ![](img/WifiHackingWorkshop2.png)
