@@ -14,7 +14,9 @@ Configure the Wireless Access point
 
 ### Adapter Setup
 
-[https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
+link: [https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
+
+enter these commands in the terminal:
 
 sudo apt\-get update
 
