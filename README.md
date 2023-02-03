@@ -17,6 +17,8 @@ Configure the Wireless Access point
 
 ### Adapter Setup
 
+if using the TPLink TL-WN823N follow this adapter setup otherwise you can skip this section
+
 link: [https://github\.com/gnab/rtl8812au](https://github.com/gnab/rtl8812au)
 
 enter these commands in the terminal:
