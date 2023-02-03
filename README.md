@@ -2,6 +2,7 @@
 
 Summary: I will be gathering the Access Point MAC address and MAC address of my phone. I will then 
 send 10 deauthentication packets which will cause my phone to disconnect and reauthenticate to the Access Point. We then capture the authentication prcoess save it locally and crack the password
+
 ![](img/WifiHackingWorkshop0.png)
 
 ### Disclaimer
@@ -50,7 +51,7 @@ Add the Wireless adapter to VirtualBox
 
 ### Adapter Setup
 
-sudo airmon\-ng check kill checks for conflicting processes and kills them. This howver will result in loss of internet for the VM, can be solved by restarting.
+sudo airmon\-ng check kill checks for conflicting processes and kills them. This however will result in loss of internet for the VM, can be solved by restarting.
 
 Iwconfig shows the adapter names. In my case wlan0 is the wireless adapter.
 
@@ -60,11 +61,13 @@ sudo airmon\-ng start wlan 0 - Starts the wireless adapter in monitor mode.
 
 ### Discovering BSSID
 
-![](img/WifiHackingWorkshop4.png)
-
 sudo airodump\-ng \-c 11 wlan0 - discovers access points on channel 11 using wlan0
 
 BSSID is the access point MAC address of the router. In this case we are looking at the BSSID for CyberSec
+
+![](img/WifiHackingWorkshop4.png)
+
+
 
 ### Discovering devices
 
