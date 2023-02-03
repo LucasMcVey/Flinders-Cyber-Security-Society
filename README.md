@@ -80,9 +80,10 @@ The MAC address of 0C:8D:CA:A6:94:8D is my phone and that is where the deauthent
 ### De-Auth Attack
 
  * `sudo airodump-ng -c 11 --bssid B0-95-75-5C-3B-94 -w psk wlan0 ` -c specifices the channel number to scan, in this case channel 11. Bssid is the MAC address of the Access Point. -w writes the output to a file locally using the name after it, in this case psk.
+
 This captures packets for the CyberSec accesspoint and saves it locally to a file named psk
 
- * `sudo aireplay-ng -0 10 -a B0:95:75:5C:3B:94 -c 0C:8D:CA:A6:93:8D wlan0 ` -0 sets the mode as deauth, alternatively can be set by using --deauth instead. "10" sets the number of deauthenication packets sent. -A is the Access Point MAC address. -C is the client MAC address. wlan0 is the interface the command is being used on
+ * `sudo aireplay-ng -0 10 -a B0:95:75:5C:3B:94 -c 0C:8D:CA:A6:93:8D wlan0 ` -0 sets the mode as deauth, alternatively can be set by using --deauth instead. "10" sets the number of deauthenication packets sent. -A is the Access Point MAC address. -C is the client MAC address. wlan0 is the interface the command is being used on.
   
 This sends 10 deauthentication packets to my phone which will disconnect from the Access Point and automatically reconnect. The reauthentication process for the WPA2 handshake is captured and saved locally.
 
