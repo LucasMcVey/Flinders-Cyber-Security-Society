@@ -1,6 +1,6 @@
-Summary: In this guide we will be covering challenges: "Put an additional product into another user's shopping basket" and "Forge an essentially unsigned JWT token"
+# Summary: In this guide we will be covering challenges: "Put an additional product into another user's shopping basket" and "Forge an essentially unsigned JWT token"
 
-Challenge 1 - Put an additional product into another user's shopping basket
+### Challenge 1 - Put an additional product into another user's shopping basket
 
 First step is to create an additional user account as shown in the picture below:
 ![](Screenshot%203.png)
@@ -18,7 +18,7 @@ At the bottom of the request modify by including a second basket Id after the fi
 
 
 
-Challenge 2 - Forge an essentially unsigned JWT token
+### Challenge 2 - Forge an essentially unsigned JWT token
 
 First step is to look through burp suite for a get request that has the Authroization : Bearer text
 
