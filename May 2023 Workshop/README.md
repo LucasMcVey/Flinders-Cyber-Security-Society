@@ -18,7 +18,7 @@ Go back to burpsuite and look for the POST method and the url of /api/BasketItem
 
 At the bottom of the request modify by including a second basket Id after the first Basket Id like in the image below:
 
-![](IMG/Screenshot09.png)
+![](IMG/Screenshot9.png)
 
 {"ProductId": 15,"BasketId": "6","quantity": 1,"BasketId": "1"}
 
