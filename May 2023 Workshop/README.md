@@ -5,10 +5,10 @@ Summary: In this guide we will be covering challenges: "Put an additional produc
 ### Challenge 1 - Put an additional product into another user's shopping basket
 
 First step is to create an additional user account as shown in the picture below:
-![](Screenshot%203.png)
+![](Screenshot 03.png)
 
 Next step is to add any item to the basket:
-![](Screenshot%204.png)
+![](Screenshot 04.png)
 
 Go back to burpsuite and look for the POST method and the url of /api/BasketItems. Right click and send to repeater
 ![](Screenshot%208.png)
