@@ -2,6 +2,8 @@
 
 Summary: In this guide we will be covering challenges: "Put an additional product into another user's shopping basket" and "Forge an essentially unsigned JWT token"
 
+Here is the recorded version of our workshop for extra detail: https://www.youtube.com/watch?v=CBUNIHnZU7M
+
 ### Challenge 1 - Put an additional product into another user's shopping basket
 
 First step is to create an additional user account as shown in the picture below:
